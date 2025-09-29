@@ -22,7 +22,7 @@ void loop() {
   clicks_loop();
 }
 
-// when a single click is detected by clicks.ini, this function is called
+// when a single click is detected by clicks.ino, this function is called
 void my_single_click(int button_nr) {
   Serial.print("Single click on button ");
   Serial.println(button_nr);
