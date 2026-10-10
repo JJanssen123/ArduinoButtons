@@ -11,6 +11,7 @@
 
 void setup() {
   Serial.begin(115200);
+  clicks_setup();
 
   // register callback functions
   set_single_click_callback(my_single_click); // when a single click is detected by clicks.ino, my_single_click is called
