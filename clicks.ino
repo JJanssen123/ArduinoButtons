@@ -13,19 +13,19 @@ int double_click_interval = 500;
 int long_click_interval = 550;
 
 // declare callbacks
-void (*single_click_callback)(int);
-void (*double_click_callback)(int);
-void (*long_click_callback)(int);
+void (*single_click_callback)(int) = nullptr;
+void (*double_click_callback)(int) = nullptr;
+void (*long_click_callback)(int) = nullptr;
 
-void set_single_click_callback(void *function_pointer) {
+void set_single_click_callback(void (*function_pointer)(int)) {
   single_click_callback = function_pointer;
 }
 
-void set_double_click_callback(void *function_pointer) {
+void set_double_click_callback(void (*function_pointer)(int)) {
   double_click_callback = function_pointer;
 }
 
-void set_long_click_callback(void *function_pointer) {
+void set_long_click_callback(void (*function_pointer)(int)) {
   long_click_callback = function_pointer;
 }
 
