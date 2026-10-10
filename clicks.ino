@@ -6,7 +6,7 @@ const int NR_OF_BUTTONS_IN_USE = 4;
 
 
 // globals
-unsigned int last_click_time[NR_OF_BUTTONS_IN_USE];
+unsigned long last_click_time[NR_OF_BUTTONS_IN_USE];
 int clicked[NR_OF_BUTTONS_IN_USE];
 int hold[NR_OF_BUTTONS_IN_USE];
 int double_click_interval = 500;
