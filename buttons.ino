@@ -13,8 +13,8 @@ int buttons_lastState[NR_OF_BUTTONS];
 int buttons_State[NR_OF_BUTTONS];
 
 // declare callbacks
-void (*button_on_callback)(int);
-void (*button_off_callback)(int);
+void (*button_on_callback)(int) = nullptr;
+void (*button_off_callback)(int) = nullptr;
 
 void buttons_setup() {
   for (int button_nr = 0; button_nr < NR_OF_BUTTONS; button_nr++) {
