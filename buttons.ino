@@ -24,11 +24,11 @@ void buttons_setup() {
   }
 }
 
-void set_button_on_callback(void *function_pointer) {
+void set_button_on_callback(void (*function_pointer)(int)) {
   button_on_callback = function_pointer;
 }
 
-void set_button_off_callback(void *function_pointer) {
+void set_button_off_callback(void (*function_pointer)(int)) {
   button_off_callback = function_pointer;
 }
 
