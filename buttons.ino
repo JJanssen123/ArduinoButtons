@@ -45,12 +45,12 @@ void buttons_loop() {
       if (buttons_State[button_nr] == 0 && !this_button ) {
         buttons_State[button_nr] = 1;
         buttons_lastDebounceTime[button_nr] = current_millis;
-        if (button_on_callback != NULL) button_on_callback(button_nr);
+        if (button_on_callback != nullptr) button_on_callback(button_nr);
       }
       else if (buttons_State[button_nr] == 1 && this_button) {
         buttons_State[button_nr] = 0;
         buttons_lastDebounceTime[button_nr] = current_millis;
-        if (button_off_callback != NULL) button_off_callback(button_nr);
+        if (button_off_callback != nullptr) button_off_callback(button_nr);
       }
     }
   }
