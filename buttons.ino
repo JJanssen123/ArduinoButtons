@@ -42,12 +42,12 @@ void buttons_loop() {
     unsigned long current_millis = millis();
     if (current_millis - buttons_lastDebounceTime[button_nr] >= debounceDelay) {
       int this_button = digitalRead(BUTTON_PINS[button_nr]);
-      if (buttons_State[button_nr] == 0 && this_button ) {
+      if (buttons_State[button_nr] == 0 && !this_button ) {
         buttons_State[button_nr] = 1;
         buttons_lastDebounceTime[button_nr] = current_millis;
         if (button_on_callback != NULL) button_on_callback(button_nr);
       }
-      else if (buttons_State[button_nr] == 1 && !this_button) {
+      else if (buttons_State[button_nr] == 1 && this_button) {
         buttons_State[button_nr] = 0;
         buttons_lastDebounceTime[button_nr] = current_millis;
         if (button_off_callback != NULL) button_off_callback(button_nr);
