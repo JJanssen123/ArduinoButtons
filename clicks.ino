@@ -43,7 +43,7 @@ void clicks_loop() {
       clicked[button_nr] = 0;
     }
     if (current_millis - last_click_time[button_nr] >= long_click_interval && hold[button_nr]) {
-    if (long_click_callback != NULL) long_click_callback(button_nr);      
+    if (long_click_callback != nullptr) long_click_callback(button_nr);      
       hold[button_nr] = 0;
     }
   }
@@ -52,13 +52,13 @@ void clicks_loop() {
 void clicks_button_on(int button_nr) {
   unsigned long current_millis = millis();
   if (!clicked[button_nr]) {
-    if (single_click_callback != NULL) single_click_callback(button_nr);
+    if (single_click_callback != nullptr) single_click_callback(button_nr);
     clicked[button_nr] = 1;
     hold[button_nr] = 1;
     last_click_time[button_nr] = current_millis;
   }
   else if (clicked[button_nr] && current_millis - last_click_time[button_nr] <= double_click_interval) {
-    if (double_click_callback != NULL) double_click_callback(button_nr);
+    if (double_click_callback != nullptr) double_click_callback(button_nr);
     clicked[button_nr] = 0;
   }
 }
